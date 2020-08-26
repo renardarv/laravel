@@ -20,5 +20,5 @@ spec:
       - name: lp-stag
         image: renardarv/landing-page:buildnumber 
         ports:
-        - containerPort: 8000
+        - containerPort: 80
       restartPolicy: Always
