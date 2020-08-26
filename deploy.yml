@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: lp-stag
-        image: renardarv/laravel:buildnumber 
+        image: renardarv/landing-page:buildnumber 
         ports:
         - containerPort: 8000
       restartPolicy: Always
