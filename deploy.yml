@@ -1,37 +1,24 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: lp-stag-service
-spec:
-  ports:
-  - port: 80
-    protocol: TCP
-    type: LoadBalancer
-  selector:
-    app: lp-stag
----
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lp-stag-deployment
+  name: laravel-deployment
   labels:
-    app: lp-stag
+    app: laravel-stag
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: lp-stag
+      app: laravel-stag
       track: stable
   template:
     metadata:
       labels:
-        app: lp-stag
+        app: laravel-stag
         track: stable
     spec:
       containers:
-      - name: lp-stag
-        image: renardarv/landing-page:buildnumber 
+      - name: laravel-stag
+        image: renardarv/laravel:buildnumber 
         ports:
-        - containerPort: 80
+        - containerPort: 8000
       restartPolicy: Always
