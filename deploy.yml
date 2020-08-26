@@ -1,3 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: lp-stag-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    #type: LoadBalancer
+  selector:
+    app: lp-stag
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
